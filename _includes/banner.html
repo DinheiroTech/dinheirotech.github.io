@@ -1,0 +1,65 @@
+	<!-- banner -->
+		<div class="banner-info">
+			<div class="container">
+				<div class="w3-banner-info">
+					<div class="slider">
+						<div class="callbacks_container">
+							<ul class="rslides callbacks callbacks1" id="slider4">
+								<li>
+									<div class="w3layouts-banner-info">
+										<h3>SAIBA SEU CASHBACK</h3>
+										<p>Quer saber quanto vai receber de cashback pagando um boleto ou pix na promoção de algum aplicativo (Picpay, 99pay, pagbank)? Utilize a calculadora de cashback para descobrir!</p>
+										<div class="w3ls-button">
+											<a href="/cashback">Acessar</a>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="w3layouts-banner-info">
+										<h3>QR-Code PIX</h3>
+										<p>Gere agora o QR-Code estático para receber um pix diretamente na sua chave.</p>
+										<div class="w3ls-button">
+											<a href="http://qrcodepix.dinheiro.tech">QR-Code Pix</a>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="clearfix"> </div>
+									<script>
+										// You can also use "$(window).load(function() {"
+										$(function () {
+										  // Slideshow 4
+										  $("#slider4").responsiveSlides({
+											auto: true,
+											pager:true,
+											nav:false,
+											speed: 400,
+											namespace: "callbacks",
+											before: function () {
+											  $('.events').append("<li>before event fired.</li>");
+											},
+											after: function () {
+											  $('.events').append("<li>after event fired.</li>");
+											}
+										  });
+									
+										});
+									 </script>
+									<!--banner Slider starts Here-->
+					</div>
+				</div>
+				<div class="agileinfo-social-grids">
+					<ul>
+						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fa fa-rss"></i></a></li>
+						<li><a href="#"><i class="fa fa-vk"></i></a></li>
+						<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+						<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //banner -->

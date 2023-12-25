@@ -1,0 +1,77 @@
+<!-- testimonial -->
+	<div class="jarallax testimonial">
+		<div class="testimonial-dot">
+			<div class="container">
+				<div class="agileits-heading testimonial-heading">
+					<h3>Client Says</h3>
+				</div>
+				<div class="w3-agile-testimonial">
+					<div class="slider">
+						<div class="callbacks_container">
+							<ul class="rslides callbacks callbacks1" id="slider3">
+								<li>
+									<div class="testimonial-img-grid">
+										<div class="testimonial-img t-img1">
+											<img src="images/14.jpg" alt="" />
+										</div>
+									</div>
+									<div class="testimonial-img-info">
+										<p>Nunc interdum elit nec sapien vehicula, ut blandit nulla ultrices. Sed ullamcorper metus eget efficitur rutrum. Aliquam a nunc odio. Aenean fermentum finibus efficitur.</p>
+										<h5>Peter Guptill</h5>
+										<h6>Proin blandit</h6>
+									</div>
+								</li>
+								<li>
+									<div class="testimonial-img-grid">
+										<div class="testimonial-img t-img1">
+											<img src="images/15.jpg" alt="" />
+										</div>
+									</div>
+									<div class="testimonial-img-info">
+										<p>Morbi est est, mollis id diam a, pellentesque dignissim lorem. Sed malesuada sed lacus sit amet vestibulum. Sed nibh purus, egestas eu orci vel, mollis interdum orci.</p>
+										<h5>Mary Jane</h5>
+										<h6>Lorem ipsum</h6>
+									</div>
+								</li>
+								<li>
+									<div class="testimonial-img-grid">
+										<div class="testimonial-img t-img1">
+											<img src="images/16.jpg" alt="" />
+										</div>
+									</div>
+									<div class="testimonial-img-info">
+										<p>Proin blandit rhoncus metus porta tristique. Praesent suscipit in erat a tempor. Nullam tempor lectus ex, a auctor orci ultricies ac. Mauris sapien neque, condimentum sit</p>
+										<h5>Steven Wilson</h5>
+										<h6>Proin blandit</h6>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="clearfix"> </div>
+						<script>
+									// You can also use "$(window).load(function() {"
+									$(function () {
+									  // Slideshow 4
+									  $("#slider3").responsiveSlides({
+										auto: true,
+										pager:false,
+										nav:false,
+										speed: 500,
+										namespace: "callbacks",
+										before: function () {
+										  $('.events').append("<li>before event fired.</li>");
+										},
+										after: function () {
+										  $('.events').append("<li>after event fired.</li>");
+										}
+									  });
+								
+									});
+						</script>
+						<!--banner Slider starts Here-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //testimonial -->

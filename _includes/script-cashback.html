@@ -1,0 +1,94 @@
+<script>
+function copiar() {
+   var input_temp = document.createElement("input");
+   input_temp.value = "00020126790014BR.GOV.BCB.PIX013642a57095-84f3-4a42-b9fb-d08935c86f470217Planilha cashback5204000053039865802BR5923Renato Monteiro Batista6009SAO PAULO61080540900062070503***6304E57A";
+   document.body.appendChild(input_temp);
+   input_temp.select();
+   document.execCommand("copy");
+   document.body.removeChild(input_temp);
+}
+function calcular(){
+   valor_boleto=parseFloat(document.getElementById("valor").value);
+   if (valor_boleto > 5000) {
+      document.getElementById("valor").className="coral";
+      document.getElementById("valorHelp").innerText="Tem certeza? AVISO: Regulamento item 2.5.3 limita o boleto no maximo R$ 5mil.";
+   }
+   else {
+      document.getElementById("valor").className="amarelo";
+      document.getElementById("valorHelp").innerText="Informe o valor do boleto que você deseja pagar.";
+   }
+   perc_cashback=parseFloat(document.getElementById("perc_cashback").value/100);
+   cashback_maximo=parseFloat(document.getElementById("cashback_maximo").value);
+   taxa_picpay=parseFloat(document.getElementById("pagto_parcelado").value/100);
+   taxa_pagto_boleto=parseFloat(document.getElementById("pagto_cartao").value/100);
+   tarifa_boleto=valor_boleto*taxa_pagto_boleto;
+   valor_financiado=valor_boleto*(1+taxa_pagto_boleto);
+   i=document.getElementById("qtd_parcelas").value;
+   valor_prestacao=(taxa_picpay/(1-Math.pow((1+taxa_picpay),-i)))*valor_financiado;
+   total_cartao=valor_prestacao*i;
+   juros_parcelamento=total_cartao-tarifa_boleto-valor_boleto;
+   cashback=valor_boleto*perc_cashback;
+   if (cashback > cashback_maximo) {
+      cashback=cashback_maximo;
+   }
+   resultado_final=valor_boleto+cashback-total_cartao;
+   document.getElementById("taxa_cartaoHelp").innerText=document.getElementById("pagto_cartao").value+"%";
+   document.getElementById("juros_parcelamentoHelp").innerText=document.getElementById("pagto_parcelado").value+"% ao mês";
+   document.getElementById("val_boleto").value=valor_boleto.toFixed(2);
+   document.getElementById("taxa_cartao").value=tarifa_boleto.toFixed(2);
+   document.getElementById("valor_prestacao").value=i+" x de R$ "+valor_prestacao.toFixed(2);
+   document.getElementById("total_cartao").value=total_cartao.toFixed(2);
+   document.getElementById("juros_parcelamento").value=juros_parcelamento.toFixed(2);
+   document.getElementById("valor_cashback").value=cashback.toFixed(2);
+   document.getElementById("resultado_final").value=resultado_final.toFixed(2);
+   if (resultado_final > 0) {
+      document.getElementById("resultado_final").className="verde";
+      document.getElementById("resultado_finalHelp").innerText="O valor do cashback é maior que o das taxas.";
+   }
+   else {
+      document.getElementById("resultado_final").className="coral";
+      document.getElementById("resultado_finalHelp").innerText="O valor das taxas é maior que o valor do cashback.";
+   }
+
+/*   valor_avista=valor_boleto*(1+taxa_pagto_boleto);
+      var valor_parcela=(valor_cartao/i);
+      var valor_cashback=valor_cartao*(document.getElementById("percentual_"+i).value/100);
+      var resultado_parcela=valor_boleto+valor_cashback-valor_cartao;
+      valor_parcela=valor_parcela.toFixed(2);
+      valor_cartao=valor_cartao.toFixed(2);
+      valor_cashback=valor_cashback.toFixed(2);
+      if (resultado_parcela > 0) {
+         document.getElementById("info_"+i).innerHTML="Você <b>ganha</b> R$ "+resultado_parcela.toFixed(2);
+         document.getElementById("linha_"+i).className="verde";
+      }
+      else {
+         document.getElementById("info_"+i).innerHTML="Você vai <b>perder R$ "+(-1*resultado_parcela).toFixed(2)+"</b> em taxas.";
+         document.getElementById("linha_"+i).className="coral";
+      }
+      document.getElementById("cartao_"+i).innerText=valor_cartao;
+      document.getElementById("parcela_"+i).innerText=valor_parcela;
+      document.getElementById("boleto_"+i).innerText=valor_cashback;
+      document.getElementById("detalhe_"+i).innerText="Será cobrado no seu cartão.....R$ "+valor_cartao+"\n"+
+                                                      "Valor financiado...............R$ "+(valor_financiado)+"\n"+
+                                                      "Taxa pagamento boleto..........R$ "+(valor_financiado*taxa_picpay).toFixed(2); 
+*/
+}
+function reais(v){
+    v=v.replace(/\D/g,"");
+    v=v/100;
+    v=v.toFixed(2);
+    return v;
+}
+function mascara(o,f){
+    v_obj=o;
+    v_fun=f;
+    setTimeout("execmascara()",1);
+}
+function execmascara(){
+    v_obj.value=v_fun(v_obj.value);
+    calcular();
+}
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>

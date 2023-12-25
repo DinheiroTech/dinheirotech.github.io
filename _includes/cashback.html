@@ -1,0 +1,90 @@
+
+<div class="card">
+<div class="card-body">
+   
+   <table width="100%">
+      <tr>
+         <td id="calculos" valign="top">
+            <div class="row row-cols-lg-auto g-3 align-items-center">
+               <label for="valor" class="form-label">Preencha o valor do boleto, R$:</label>
+               <input class="amarelo" type="text" id="valor" name="valor" placeholder="Informe o valor do seu boleto" size="15" maxlength="13" value="4400.00" onclick="this.select();" onkeypress="mascara(this,reais)">
+               <div id="valorHelp" class="form-text">Informe o valor do boleto que você deseja pagar.</div>
+            </div>
+            <div class="row row-cols-lg-auto g-3 align-items-center">
+               <label for="cashback_maximo" class="form-label">Preencha o valor máximo do cashback R$:</label>
+               <input class="amarelo" type="text" id="cashback_maximo" name="maximo" placeholder="Informe o valor máximo do cashback" size="15" maxlength="13" value="700.00" onclick="this.select();" onkeypress="mascara(this,reais)">
+               <div id="cashback_maximoHelp" class="form-text">Verifique o texto em letras menores no final da notificação que você recebeu no PicPay.</div>
+            </div>
+            <div class="row row-cols-lg-auto g-3 align-items-center">
+               <label for="qtd_parcelas" class="form-label">Informe a quantidade de parcelas:</label>
+               <input class="amarelo" type="number" id="qtd_parcelas" name="parcelas" size="3" value="12" min="2" max="12" step="1" class="amarelo" onclick="this.select();" onchange="calcular();">
+               <div id="qtd_parcelasHelp" class="form-text">Informe em quantas vezes deseja parcelar o pagamento.</div>
+            </div>
+            <div class="row row-cols-lg-auto g-3 align-items-center">
+               <label for="perc_cashback" class="form-label">Informe o percentual de cashback da promoção:</label>
+               <input class="amarelo" type="number" id="perc_cashback" name="cashback" size="3" value="16" min="0" max="99" step="1" class="amarelo" onclick="this.select();" onchange="calcular();">
+               <div id="perc_cashbackHelp" class="form-text">O percentual do cashback varia conforme a quantidade de parcelas e a promoção recebida.</div>
+            </div>
+            <div class="row row-cols-lg-auto g-3 align-items-center">
+               <label for="pagto_cartao" class="form-label">Taxa do cartão:</label>
+               <input class="amarelo" type="number" id="pagto_cartao" name="tx_cartao" size="5" value="3.99" min="0.01" max="100" step="0.01" class="amarelo" onclick="this.select();" onchange="calcular();">
+<!--
+               <select class="amarelo" id="pagto_cartao" name="tx_cartao" onchange="calcular();">
+                  <option value="3.99">3,99% Luz, saneamento, gas e impostos</option>
+                  <option value="4.99" selected>4,99% Demais boletos (Promocional)</option>
+                  <option value="5.99">5,99% Demais boletos (Padrão)</option>
+               </select>
+-->
+               <div id="pagto_parceladokHelp" class="form-text">Consulte sempre a p&aacute;gina de <a href="https://tarifas-taxas.picpay.com/">tarifas do PicPay para maiores informa&ccedil;&otilde;es.</a></div>
+            </div>
+            <div class="row row-cols-lg-auto g-3 align-items-center">
+               <label for="pagto_parcelado" class="form-label">Taxa do parcelamento:</label>
+               <input class="amarelo" type="number" id="pagto_parcelado" name="tx_parcelado" size="5" value="4.49" min="0.01" max="100" step="0.01" class="amarelo" onclick="this.select();" onchange="calcular();">
+               <div id="pagto_parceladokHelp" class="form-text">Consulte sempre a p&aacute;gina de <a href="https://tarifas-taxas.picpay.com/">tarifas do PicPay para maiores informa&ccedil;&otilde;es.</a></div>
+            </div>
+
+            <p><button type="button" class="btn btn-primary" onclick="calcular()">Calcular quanto vou receber de cashback pagando um boleto <i class="fas fa-money-bill-wave"></i></button></p>
+            <div class="row row-cols-lg-auto g-3 align-items-center">
+               <label for="val_boleto" class="form-label">Valor do boleto:</label>
+               <input type="text" id="val_boleto" name="val_boleto" placeholder="Será calculado..." readonly>
+               <div id="val_boletoHelp" class="form-text">Valor do boleto que será pago.</div>
+            </div>
+            <div class="row row-cols-lg-auto g-3 align-items-center">
+               <label for="taxa_cartao" class="form-label">Taxa de pagamento de boleto:</label>
+               <input type="text" id="taxa_cartao" name="taxa_cartao" placeholder="Será calculado..." readonly>
+               <div id="taxa_cartaoHelp" class="form-text">Taxa de pagamento de boleto com cartão de crédito.</div>
+            </div>
+            <div class="row row-cols-lg-auto g-3 align-items-center">
+               <label for="juros_parcelamento" class="form-label">Juros do parcelamento:</label>
+               <input type="text" id="juros_parcelamento" name="juros_parcelamento" placeholder="Será calculado..." readonly>
+               <div id="juros_parcelamentoHelp" class="form-text">Taxa de juros do pagamento parcelado.</div>
+            </div>
+            <div class="row row-cols-lg-auto g-3 align-items-center">
+               <label for="valor_prestacao" class="form-label">Valor da prestação:</label>
+               <input type="text" id="valor_prestacao" name="valor_prestacao" placeholder="Será calculado..." readonly>
+               <div id="valor_prestacaoHelp" class="form-text">Valor da parcela que será cobrado no seu cartão.</div>
+            </div>
+            ===========================================================
+            <div class="row row-cols-lg-auto g-3 align-items-center">
+               <label for="total_cartao" class="form-label">Total cobrado no seu cartão:</label>
+               <input type="text" id="total_cartao" name="total_cartao" placeholder="Será calculado..." readonly>
+               <div id="total_cartaoHelp" class="form-text">Valor total que será cobrado no seu cartão.</div>
+            </div>
+            <div class="row row-cols-lg-auto g-3 align-items-center">
+               <label for="valor_cashback" class="form-label">Você receberá de cashback:</label>
+               <input type="text" id="valor_cashback" name="valor_cashback" placeholder="Será calculado..." readonly>
+               <div id="valor_cashbackHelp" class="form-text">Valor que você receberá de cashback.</div>
+            </div>
+            <div class="row row-cols-lg-auto g-3 align-items-center">
+               <label for="resultado_final" class="form-label">Resultado final:</label>
+               <input type="text" id="resultado_final" name="resultado_final" placeholder="Será calculado..." readonly>
+               <div id="resultado_finalHelp" class="form-text">Resultado desta operação.</div>
+            </div>
+<!--            <p>Veja também:</p>
+            <p><a href="calcule-o-boleto.html"><button type="button" class="btn btn-info">Calcular valor do boleto para ganhar o cashback máximo <i class="fas fa-barcode"></i></button></a></p>-->
+         </td>
+         <td width="270" valign="top"><a href="javascript:copiar();"><img src="/images/pix.png" width="261" height="372"></a><h4>Acesse o grupo no telegram:</h4><a href="https://t.me/PicPay"><i class="fab fa-telegram fa-4x"></i></a></td>
+      </tr>
+   </table>
+</div></div>
+<div class="card"></div>
