@@ -58,7 +58,7 @@ function decodificarbrcode() {
 
    // Valor
    if (retorno.hasOwnProperty('54')) {
-      document.getElementById("valor").value=reais(retorno['54']);
+      document.getElementById("valor").value=retorno['54'];
    }
    else {
       document.getElementById("valor").value='';
