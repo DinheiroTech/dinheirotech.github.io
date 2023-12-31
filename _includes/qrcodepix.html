@@ -101,52 +101,51 @@ function gerarqrcode(){
 
 
 <div class="card-body">
-   
-   <table width="100%">
-      <tr>
-         <td id="calculos" valign="top">
-            <div class="row row-cols-lg-auto g-3 align-items-center">
-               <label for="chave" class="form-label">Chave Pix:</label>
-               <input type="text" id="chave" name="chave" placeholder="Informe a chave pix" value="" size="50" maxlength="100" onclick="this.select();" data-placement="right" title="Informe a chave pix de destino" required>
-               <div id="chaveHelp" class="form-text">A chave pode ser: Aleatória (EVP), E-mail, Telefone, CPF ou CNPJ.</div>
-            </div>
-            <div class="row row-cols-lg-auto g-3 align-items-center">
-               <label for="valor" class="form-label">Valor a pagar:</label>
-               <input type="text" id="valor" name="valor" placeholder="Informe o valor a cobrar" size="15" maxlength="13" value="" onclick="this.select();" onkeypress="mascara(this,reais)">
-               <div id="valorHelp" class="form-text">Utilize o ponto "." como separador de decimais. Prencher 0 caso não deseje especificar um valor.</div>
-            </div>
-            <div class="row row-cols-lg-auto g-3 align-items-center">
-               <label for="beneficiario" class="form-label">Nome do beneficiário:</label>
-               <input type="text" id="beneficiario" name="beneficiario" placeholder="Informe o nome do beneficiario" size="30"  onclick="this.select();" maxlength="25" value="" required >
-            </div>
-            <div class="row row-cols-lg-auto g-3 align-items-center">
-               <label for="cidade" class="form-label">Cidade do beneficiário:</label>
-               <input type="text" id="cidade" name="cidade" placeholder="Informe a cidade" onclick="this.select();" maxlength="15" value="" required>
-            </div>
-            <div class="row row-cols-lg-auto g-3 align-items-center">
-               <label for="descricao" class="form-label">Descrição da cobrança (opcional):</label>
-               <input type="text" id="descricao" name="descricao" placeholder="Descricao do pagamento" size="60" maxlength="70" onclick="this.select();">
-            </div>
-            <div class="row row-cols-lg-auto g-3 align-items-center">
-               <label for="identificador" class="form-label">Identificador do pagamento:</label>
-               <input type="text" id="identificador" name="identificador" placeholder="Identificador do pagamento" value="***" size="25" onclick="this.select();" >
-               <div id="identificadorHelp" class="form-text">Utilizar <b>***</b> para identificador gerado automaticamente.O Banco Itaú exige a autorização para uso de identificador que não tenha sido criado pelo aplicativo do próprio banco, <a href="https://github.com/bacen/pix-api/issues/214">saiba mais</a>.</div>
-            </div>
-            <div align="center"><button type="button" class="btn btn-primary" onclick="gerarqrcode()">Gerar QR-Code do PIX <i class="fas fa-money-bill-wave"></i></button></div>
-         <td width="270" valign="top"><a href="javascript:copiar();"><img src="/images/pix.png" width="261" height="372"></a></td>
-      </tr>
-      <tr><td colspan="2">{% include ads.html %}</td></tr>
-      <tr><td colspan="2">
-         <hr size="1">
-         <a name="exibirqrcode"></a>
-         <h3>Código Pix Copia-e-cola</h3>
-         <textarea class="text-monospace" id="brcodepix" rows="5" cols="135" onclick="copiar()" readonly>Aguarde...</textarea>
-         <div id="imagem-qr" align="center"></div>
-         <div align="center"><a href="/qr-code-pix"><button type="button" class="btn btn-warning">Gerar outro QR-Code do Pix</button></a></div>
-         {% include ads.html %}
-      </td>
-      </tr>
-   </table>
+  <div class="col-md-9">
+      <div class="row row-cols-lg-auto g-3 align-items-center">
+         <label for="chave" class="form-label">Chave Pix:</label>
+         <input type="text" id="chave" name="chave" placeholder="Informe a chave pix" value="" size="50" maxlength="100" onclick="this.select();" data-placement="right" title="Informe a chave pix de destino" required>
+         <div id="chaveHelp" class="form-text">A chave pode ser: Aleatória (EVP), E-mail, Telefone, CPF ou CNPJ.</div>
+      </div>
+      <div class="row row-cols-lg-auto g-3 align-items-center">
+         <label for="valor" class="form-label">Valor a pagar:</label>
+         <input type="text" id="valor" name="valor" placeholder="Informe o valor a cobrar" size="15" maxlength="13" value="" onclick="this.select();" onkeypress="mascara(this,reais)">
+         <div id="valorHelp" class="form-text">Utilize o ponto "." como separador de decimais. Prencher 0 caso não deseje especificar um valor.</div>
+      </div>
+      <div class="row row-cols-lg-auto g-3 align-items-center">
+         <label for="beneficiario" class="form-label">Nome do beneficiário:</label>
+         <input type="text" id="beneficiario" name="beneficiario" placeholder="Informe o nome do beneficiario" size="30"  onclick="this.select();" maxlength="25" value="" required >
+      </div>
+      <div class="row row-cols-lg-auto g-3 align-items-center">
+         <label for="cidade" class="form-label">Cidade do beneficiário:</label>
+         <input type="text" id="cidade" name="cidade" placeholder="Informe a cidade" onclick="this.select();" maxlength="15" value="" required>
+      </div>
+      <div class="row row-cols-lg-auto g-3 align-items-center">
+         <label for="descricao" class="form-label">Descrição da cobrança (opcional):</label>
+         <input type="text" id="descricao" name="descricao" placeholder="Descricao do pagamento" size="60" maxlength="70" onclick="this.select();">
+      </div>
+      <div class="row row-cols-lg-auto g-3 align-items-center">
+         <label for="identificador" class="form-label">Identificador do pagamento:</label>
+         <input type="text" id="identificador" name="identificador" placeholder="Identificador do pagamento" value="***" size="25" onclick="this.select();" >
+         <div id="identificadorHelp" class="form-text">Utilizar <b>***</b> para identificador gerado automaticamente.O Banco Itaú exige a autorização para uso de identificador que não tenha sido criado pelo aplicativo do próprio banco, <a href="https://github.com/bacen/pix-api/issues/214">saiba mais</a>.</div>
+      </div>
+      <div align="center"><button type="button" class="btn btn-primary" onclick="gerarqrcode()">Gerar QR-Code do PIX <i class="fas fa-money-bill-wave"></i></button></div>
+   </div>
+   <div class="col-md-3 align-items-center" align="center"></div>
+      <a href="javascript:copiar();"><img src="/images/pix.png" width="261" height="372"></a>
+   </div>
+   <div class="col-md-12">
+      {% include ads.html %}
+   </div>
+   <div class="col-md-12">
+      <hr size="1">
+      <a name="exibirqrcode"></a>
+      <h3>Código Pix Copia-e-cola</h3>
+      <textarea class="text-monospace" id="brcodepix" rows="5" cols="60" onclick="copiar()" readonly>Aguarde...</textarea>
+      <div id="imagem-qr" align="center"></div>
+      <div align="center"><a href="/qr-code-pix"><button type="button" class="btn btn-warning">Gerar outro QR-Code do Pix</button></a></div>
+      {% include ads.html %}
+   </div>
 </div>
 <div class="card"></div>
 
