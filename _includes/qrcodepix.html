@@ -104,7 +104,7 @@ function gerarqrcode(){
   <div class="col-md-9">
       <div class="row row-cols-lg-auto g-3 align-items-center">
          <label for="chave" class="form-label">Chave Pix:</label>
-         <input type="text" id="chave" name="chave" placeholder="Informe a chave pix" value="" size="50" maxlength="100" onclick="this.select();" data-placement="right" title="Informe a chave pix de destino" required>
+         <input type="text" id="chave" name="chave" placeholder="Informe a chave pix" value="" size="45" maxlength="100" onclick="this.select();" data-placement="right" title="Informe a chave pix de destino" required>
          <div id="chaveHelp" class="form-text">A chave pode ser: Aleatória (EVP), E-mail, Telefone, CPF ou CNPJ.</div>
       </div>
       <div class="row row-cols-lg-auto g-3 align-items-center">
@@ -122,7 +122,7 @@ function gerarqrcode(){
       </div>
       <div class="row row-cols-lg-auto g-3 align-items-center">
          <label for="descricao" class="form-label">Descrição da cobrança (opcional):</label>
-         <input type="text" id="descricao" name="descricao" placeholder="Descricao do pagamento" size="60" maxlength="70" onclick="this.select();">
+         <input type="text" id="descricao" name="descricao" placeholder="Descricao do pagamento" size="45" maxlength="70" onclick="this.select();">
       </div>
       <div class="row row-cols-lg-auto g-3 align-items-center">
          <label for="identificador" class="form-label">Identificador do pagamento:</label>
@@ -141,7 +141,7 @@ function gerarqrcode(){
       <hr size="1">
       <a name="exibirqrcode"></a>
       <h3>Código Pix Copia-e-cola</h3>
-      <textarea class="text-monospace" id="brcodepix" rows="5" cols="60" onclick="copiar()" readonly>Aguarde...</textarea>
+      <textarea class="text-monospace" id="brcodepix" rows="5" cols="45" onclick="copiar()" readonly>Aguarde...</textarea>
       <div id="imagem-qr" align="center"></div>
       <div align="center"><a href="/qr-code-pix"><button type="button" class="btn btn-warning">Gerar outro QR-Code do Pix</button></a></div>
       {% include ads.html %}
