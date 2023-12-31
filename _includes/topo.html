@@ -25,17 +25,25 @@
 							<!-- Collect the nav links, forms, and other content for toggling -->
 							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 								<ul class="nav navbar-nav">
+									<li class="dropdown">
+										<a href="#" class="dropdown-toggle" data-hover="Pages" data-toggle="dropdown">QR-Code Pix <b class="caret"></b></a>
+										<ul class="dropdown-menu">
+											<li><a href="/qr-code-pix">Gerador QR-Code</a></li>
+											<li><a href="/decodificador-brcode-pix">Decodificador BR-Code</a></li>
+										</ul>
+									</li>
 								{%- if page.nome -%}
+									{%- if page.name != "qr-code-pix.md" -%}
+										{%- if page.name != "decodificador-brcode-pix.md" -%}
 									<li><a class="active" href="#">{{ page.nome | escape }}</a></li>
+										{%- endif -%}
+									{%- endif -%}
 									<li><a href="/">Home</a></li>
 								{%- else -%}
 									<li><a class="active" href="/">Home</a></li>
 								{%- endif -%}
 								{%- if page.name != "cashback.md" -%}
 									<li><a href="/cashback">Cashback</a></li>
-								{%- endif -%}
-								{%- if page.name != "qr-code-pix.md" -%}
-								<li><a href="/qr-code-pix">QR-Code Pix</a></li>
 								{%- endif -%}
 								<!--	<li><a href="blog.html">Blog</a></li>
 									<li class="dropdown">

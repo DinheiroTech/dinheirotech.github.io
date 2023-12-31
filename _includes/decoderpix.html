@@ -1,0 +1,250 @@
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+<script>
+function copiarPixSite() {
+   var input_temp = document.createElement("input");
+   input_temp.value = "00020101021126760014br.gov.bcb.pix01369562a17e-1ced-47d8-a17a-ccd08e13b91d0214Gerador QRCode5204000053039865802BR5923RENATO MONTEIRO BATISTA6009SAO PAULO62070503***6304F3D0";
+   document.body.appendChild(input_temp);
+   input_temp.select();
+   document.execCommand("copy");
+   document.body.removeChild(input_temp);
+}
+
+function decodificarbrcode() {
+   // Ao clicar no botão, submeter os dados do formulário via jquery
+
+   // Verifica se o campo chave foi preenchido
+   if ($('#brcodepix').val() == '') {
+      alert('Informe o BR-Code do Pix');
+      $('#brcodepix').focus();
+      return false;
+   }
+
+   console.log('BR-Code: ' + $('#brcodepix').val());
+
+   // Postar os addos via jquery
+   brcodepix=document.getElementById("brcodepix").value;
+
+   // Realizar o trim dos caracteres de controle ao final
+   brcodepix=brcodepix.trim();
+
+   retorno=decode_brcode(brcodepix);
+
+   console.log(retorno);
+
+   // Insere o retorno nos campos especificos
+
+   // Chave
+   // verifica se o retorno[26] existe e se o retorno[26][01] e retorno[26][02] existem
+   if (retorno.hasOwnProperty('26')) {
+      if (retorno[26].hasOwnProperty('01')) {
+         document.getElementById("chave").value=retorno['26']['01'];
+      }
+      else {
+         document.getElementById("chave").value='';
+      }
+      if (retorno[26].hasOwnProperty('02')) {
+         document.getElementById("descricao").value=retorno['26']['02'];
+      }
+      else {
+         document.getElementById("descricao").value='';
+      }
+
+   }
+   else {
+      document.getElementById("chave").value='';
+   }
+
+   // Valor
+   if (retorno.hasOwnProperty('54')) {
+      document.getElementById("valor").value=reais(retorno['54']);
+   }
+   else {
+      document.getElementById("valor").value='';
+   }
+
+   // Beneficiario
+   if (retorno.hasOwnProperty('59')) {
+      document.getElementById("beneficiario").value=retorno['59'];
+   }
+   else {
+      document.getElementById("beneficiario").value='';
+   }
+
+   // Cidade
+   if (retorno.hasOwnProperty('60')) {
+      document.getElementById("cidade").value=retorno['60'];
+   }
+   else {
+      document.getElementById("cidade").value='';
+   }
+
+   // Identificador
+   // Verifica se o retorno[62] existe e se o retorno[62][05] existe
+   if (retorno.hasOwnProperty('62')) {
+      if (retorno[62].hasOwnProperty('05')) {
+         document.getElementById("identificador").value=retorno['62']['05'];
+      }
+      else {
+         document.getElementById("identificador").value='';
+      }
+   }
+   else {
+      document.getElementById("identificador").value='';
+   }
+
+   // Escrever o conteúdo do retorno na tabela EMV
+
+   // Limpar a tabela
+   $('#tabela-emv tbody').empty();
+
+   // Tabela de descricao
+   descricao = {
+      '00': 'Payload Format Indicator',
+      '01': 'Point of Initiation Method',
+      '26': 'Merchant Account Information',
+      '52': 'Merchant Category Code',
+      '53': 'Transaction Currency',
+      '54': 'Transaction Amount',
+      '58': 'Country Code',
+      '59': 'Merchant Name',
+      '60': 'Merchant City',
+      '61': 'Postal Code',
+      '62': 'Additional Data Field Template',
+      '63': 'CRC'
+   };
+
+   // Percorrer o retorno e escrever na tabela
+   $.each(retorno, function(key, value) {
+      // se o campo for um array, escrever o conteúdo do array
+      descritor=descricao[key];
+      if (typeof value === 'object') {
+         // escrever uma linha para cada elemento do array
+         // Percorrer o array
+         $.each(value, function(key2, value2) {
+            // escrever o conteúdo do array
+            $('#tabela-emv tbody').append('<tr><td><span class="badge badge-primary">'+key+'</span><span class="badge">'+key2+'</span></td><td>'+value2+'</td><td><code>'+descritor+'</code></td></tr>');
+         });
+      }
+      else {
+         value=value.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+         $('#tabela-emv tbody').append('<tr><td><span class="badge">'+key+'</span></td><td>'+value+'</td><td><code>'+descritor+'</code></td></tr>');
+
+      }
+   });
+
+   // Scrollar a página para o resultado
+   window.location.href = "#resultado";
+
+}
+
+function decode_brcode(brcode, recursivamente=true){
+   /*
+   # Esta rotina desmembra uma linha Pix Copia-e-cola
+   # Todas as linhas são compostas por [ID do campo][Tamanho do campo com dois dígitos][Conteúdo do campo] conforme o padrão EMV®1 QRCPS Merchant Presented
+   # Caso o campo possua filhos esta função age de maneira recursiva.
+   #
+   # Autor: Eng. Renato Monteiro Batista
+   */
+   if (!recursivamente) {
+      console.log('Decode nao recursivo ' + brcode);
+   }
+   let n = 0;
+   let retorno = {};
+   while(n < brcode.length) {
+      let codigo = brcode.substring(n, n+2);
+      n += 2;
+      let tamanho = parseInt(brcode.substring(n, n+2));
+      if (isNaN(tamanho)) {
+         return false;
+      }
+      n += 2;
+      let valor = brcode.substring(n, n+tamanho);
+      console.log('Cod:' + codigo + ' T: ' + tamanho + ' Data: ' + valor);
+      n += tamanho;
+      if (codigo == '26') {
+         retorno['26']=decode_brcode(valor, false);
+      }
+      else if (recursivamente && (/^[0-9]{4}.+$/.test(valor) && (codigo != '54'))) {
+         retorno[codigo] = decode_brcode(valor);
+      }
+      else {
+         retorno[codigo] = valor;
+      }
+   }
+   return retorno;
+
+}
+
+</script>
+
+
+<div class="card-body">
+   <div class="col-md-9">
+      <h3>Código Pix Copia-e-cola (BR-Code)</h3>
+      <label for="brcodepix" class="form-label">Cole o código pix copia-e-cola:</label>
+      <textarea class="text-monospace" id="brcodepix" rows="5" cols="45" onclick="this.select()"></textarea>
+      <div align="center"><button type="button" class="btn btn-primary" onclick="decodificarbrcode()">Decodificar o BR-Code do PIX <i class="fas fa-money-bill-wave"></i></button></div>
+      <hr size="1">
+      {% include ads.html %}
+   </div>
+   <div class="col-md-3 align-items-center" align="center"></div>
+   <a href="javascript:copiarPixSite();"><img src="/images/pix.png" width="261" height="372"></a>
+   </div>
+  <div class="col-md-12">
+      <a name="resultado"></a>
+      <h3>Conte&uacute;do do BR-Code Pix</h3>
+      <div class="row row-cols-lg-auto g-3 align-items-center">
+         <label for="chave" class="form-label">Chave Pix:</label>
+         <input type="text" id="chave" name="chave" value="" size="45" maxlength="100" onclick="this.select();" readonly>
+      </div>
+      <div class="row row-cols-lg-auto g-3 align-items-center">
+         <label for="valor" class="form-label">Valor a pagar:</label>
+         <input type="text" id="valor" name="valor" size="15" maxlength="13" value="" onclick="this.select();" readonly>
+      </div>
+      <div class="row row-cols-lg-auto g-3 align-items-center">
+         <label for="beneficiario" class="form-label">Nome do beneficiário:</label>
+         <input type="text" id="beneficiario" name="beneficiario" placeholder="Informe o nome do beneficiario" size="30"  onclick="this.select();" maxlength="25" readonly >
+      </div>
+      <div class="row row-cols-lg-auto g-3 align-items-center">
+         <label for="cidade" class="form-label">Cidade do beneficiário:</label>
+         <input type="text" id="cidade" name="cidade" placeholder="Informe a cidade" onclick="this.select();" maxlength="15" value="" readonly>
+      </div>
+      <div class="row row-cols-lg-auto g-3 align-items-center">
+         <label for="descricao" class="form-label">Descrição da cobrança (opcional):</label>
+         <input type="text" id="descricao" name="descricao" placeholder="Descricao do pagamento" size="45" maxlength="70" onclick="this.select();" readonly>
+      </div>
+      <div class="row row-cols-lg-auto g-3 align-items-center">
+         <label for="identificador" class="form-label">Identificador do pagamento:</label>
+         <input type="text" id="identificador" name="identificador" placeholder="Identificador do pagamento" size="25" onclick="this.select();" readonly>
+      </div>
+      <div align="center"><a href="/decodificador-brcode-pix"><button type="button" class="btn btn-warning">Decodificar outro QR-Code do Pix</button></a></div>
+   </div>
+
+   <div class="col-md-12">
+      {% include ads.html %}
+   </div>
+
+   <div class="col-md-12">
+      <h3>Tabela de códigos EMV</h3>
+      <table class="table table-bordered" id="tabela-emv">
+         <thead>
+            <tr>
+               <th>EMV</th>
+               <th>Conte&uacute;do</th>
+               <th>Descri&ccedil;&atilde;o</th>
+            </tr>
+         </thead>
+         <tbody>
+         </tbody>
+      </table>
+   </div>
+
+   <div class="col-md-12">
+      {% include ads.html %}
+   </div>
+
+</div>
+<div class="card"></div>
+
