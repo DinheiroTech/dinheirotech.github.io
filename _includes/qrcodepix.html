@@ -97,8 +97,14 @@ function gerarqrcode(){
       console.log( "BRCode: " + json.brode);
       // Insere o json retornado na textarea
       $('#brcodepix').val(json.brcode);
-      html="<img src='"+json.imagem+"' width='300' height='300'>";
-      $('#imagem-qr').html(html);
+      //Desativacao das imagens de qrcode via google apis
+      //html="<img src='"+json.imagem+"' width='300' height='300'>";
+      //$('#imagem-qr').html(html);
+      var qrcode = new QRCode(document.getElementById("imagem-qr"), {
+            text: json.brcode,
+            width: 300,
+            height: 300
+      });
       // Realizar scrool até o anchor exibirqrcode
       location.href='#exibirqrcode';
    }
