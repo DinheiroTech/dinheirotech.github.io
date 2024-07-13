@@ -190,7 +190,12 @@ function decode_brcode(brcode, recursivamente=true){
       {% include ads.html %}
    </div>
    <div class="col-md-3 align-items-center" align="center"></div>
-   <a href="javascript:copiarPixSite();"><img src="/images/pix.png" width="261" height="372"></a>
+   <form action="https://www.paypal.com/donate" method="post" target="_top">
+      <input type="hidden" name="hosted_button_id" value="8Z8DJ8CMV794Y" />
+      <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+      <img alt="" border="0" src="https://www.paypal.com/en_BR/i/scr/pixel.gif" width="1" height="1" />
+      </form>
+      
    </div>
   <div class="col-md-12">
       <a name="resultado"></a>
