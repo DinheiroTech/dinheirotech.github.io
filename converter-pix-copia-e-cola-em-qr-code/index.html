@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="pt-BR" class="scroll-smooth"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Converter PIX Copia e Cola em QR Code - Dinheiro.tech | Dinheiro.tech</title><link rel="canonical" href="https://dinheiro.tech/converter-pix-copia-e-cola-em-qr-code/"><meta name="description" content="Ferramentas financeiras gratuitas: cashback, PIX, juros compostos e mais."><!-- Adicione mais SEO depois --><script src="/js/pizza.js" defer></script><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-CDBNC5BHFV"></script><script type="module">window.dataLayer=window.dataLayer||[];function a(){dataLayer.push(arguments)}a("js",new Date);a("config","G-CDBNC5BHFV",{anonymize_ip:!0,allow_google_signals:!1,restricted_data_processing:!0});</script><script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script><script type="text/javascript">
+    aclib.runVideoSlider({
+        zoneId: '12028738',
+    });
+</script><link rel="stylesheet" href="/_astro/_slug_.C1ZSu0ly.css"></head> <body class="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col"> <header class="bg-white dark:bg-gray-900 shadow-sm"> <nav class="container mx-auto px-4 py-4 flex justify-between items-center"> <a href="/" class="text-2xl font-bold text-blue-700 dark:text-blue-400">Dinheiro.tech</a> <div class="flex items-center gap-6"> <a href="/" class="hover:text-blue-600">Ferramentas</a> <a href="/artigos" class="hover:text-blue-600">Artigos</a> <!-- Language Switcher --> <div class="relative inline-block" id="lang-switcher"> <button type="button" id="lang-button" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition" aria-label="Selecionar idioma"> <span class="text-xl">🇧🇷</span> <span class="text-sm">▼</span> </button> <div id="lang-menu" class="absolute hidden right-0 mt-2 w-52 bg-white dark:bg-gray-900 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 py-2 z-50"> <a href="/artigos" class="block px-6 py-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition font-semibold text-blue-600"> 🇧🇷 Português </a><a href="/en/artigos" class="block px-6 py-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition "> 🇺🇸 English </a><a href="/it/artigos" class="block px-6 py-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition "> 🇮🇹 Italiano </a><a href="/fr/artigos" class="block px-6 py-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition "> 🇫🇷 Français </a><a href="/de/artigos" class="block px-6 py-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition "> 🇩🇪 Deutsch </a><a href="/es/artigos" class="block px-6 py-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition "> 🇪🇸 Español </a> </div> </div> <script type="module">const o=document.getElementById("lang-button"),d=document.getElementById("lang-menu"),t=document.getElementById("lang-switcher");let n=!1,e=null;function i(){e&&(clearTimeout(e),e=null),d?.classList.remove("hidden"),n=!0}function l(){e=window.setTimeout(()=>{d?.classList.add("hidden"),n=!1,e=null},300)}o?.addEventListener("click",s=>{s.stopPropagation(),n?l():i()});t?.addEventListener("mouseenter",i);t?.addEventListener("mouseleave",l);document.addEventListener("click",s=>{t&&!t.contains(s.target)&&(d?.classList.add("hidden"),n=!1)});</script> <!-- <a href="/cotacoes" class="hover:text-blue-600">Cotações</a>  --> </div> </nav> </header>  <main class="container mx-auto px-4 py-8 md:py-12 max-w-4xl"> <h1 class="text-3xl md:text-4xl font-bold text-center mb-8 text-blue-700 dark:text-blue-400">
+Converter PIX Copia e Cola em QR Code
+</h1> <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 md:p-8"> <form id="pix-form" class="space-y-6"> <div> <label for="brcode" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+Cole aqui o código PIX Copia e Cola ou BR Code para gerar um QR Code:
+</label> <textarea id="brcode" rows="6" placeholder="Cole aqui o código PIX que começa com 00020126..." class="mt-1 block w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 text-sm font-mono" required onclick="this.select();"></textarea> <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
+Cole o código PIX completo que você recebeu. Ele deve começar com "000201" e conter apenas números e letras maiúsculas.
+</p> </div> <button type="button" onclick="gerarQRCode()" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-6 rounded-xl transition text-lg flex items-center justify-center gap-2">
+Converter PIX Copia-e-Cola em QR Code <span class="text-xl">📱</span> </button> </form> <!-- Resultado --> <div id="resultado" class="mt-10 hidden"> <h3 class="text-2xl font-bold mb-4 text-center text-green-600 dark:text-green-400">QR Code Gerado com Sucesso!</h3> <div class="donation-wrapper hidden opacity-0 translate-y-4 scale-95 transition-all duration-1500 ease-in mt-8 text-center "> <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="dinheirotech" data-color="#FFDD00" data-emoji="🍕" data-font="Cookie" data-text="Gostou? Me pague uma pizza!" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff"></script> </div> <div id="imagem-qr" class="mt-6 flex justify-center"></div> <div class="mt-6 text-center space-x-2 space-y-2"> <button onclick="baixarQRCode()" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg transition">
+Baixar QR Code
+</button> <a href="/converter-pix-copia-e-cola-em-qr-code"> <button class="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg transition">
+Converter outro
+</button> </a> <a href="/qr-code-pix"> <button class="bg-purple-600 hover:bg-purple-700 text-white py-3 px-6 rounded-lg transition">
+Gerar novo QR Code PIX
+</button> </a> <a href="/decodificador-brcode-pix"> <button class="bg-orange-600 hover:bg-orange-700 text-white py-3 px-6 rounded-lg transition">
+Decodificar PIX Copia e Cola
+</button> </a> <a href="/transformar-qr-code-pix-em-pix-copia-e-cola"> <button class="bg-indigo-600 hover:bg-indigo-700 text-white py-3 px-6 rounded-lg transition">
+Converter QR Code PIX em Copia e Cola
+</button> </a> </div> </div> <!-- Informações adicionais --> <div class="mt-8 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg"> <h3 class="font-bold text-lg mb-2 text-blue-800 dark:text-blue-300">Transforme PIX Copia e Cola em QR Code Online, veja como usar:</h3> <ul class="list-disc list-inside space-y-2 text-sm text-gray-700 dark:text-gray-300"> <li>Esta ferramenta permite converter qualquer código PIX Copia e Cola ou BR Code em um QR Code compatível com aplicativos bancários.</li> <li>Cole o código PIX completo que você recebeu (inicia com 000201)</li> <li>Certifique-se de que o código esteja correto e completo</li> <li>Clique em "Converter PIX Copia-e-Cola em QR Code"</li> <li>O QR Code será gerado instantaneamente no seu navegador</li> <li>Baixe a imagem ou escaneie diretamente da tela</li> <li>Tudo é processado localmente - seu código não é enviado para servidores</li> <li>Também conhecido como BR Code PIX, o código Copia e Cola contém exatamente as mesmas informações presentes em um QR Code de pagamento. Nossa ferramenta apenas transforma o formato de apresentação, sem alterar os dados originais.</li> </ul> </div> <section class="mt-12"> <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">Perguntas Frequentes</h2> <div class="space-y-6"> <div class="border border-gray-200 dark:border-gray-700 rounded-2xl p-6"> <h3 class="font-semibold text-lg text-gray-900 dark:text-white mb-3">
+Como converter PIX Copia e Cola em QR Code?
+</h3> <p class="text-gray-600 dark:text-gray-400">
+Cole o código PIX completo e clique no botão "Converter". O QR Code será gerado instantaneamente no seu navegador.
+</p> </div> <div class="border border-gray-200 dark:border-gray-700 rounded-2xl p-6"> <h3 class="font-semibold text-lg text-gray-900 dark:text-white mb-3">
+Posso gerar um QR Code a partir de um código PIX?
+</h3> <p class="text-gray-600 dark:text-gray-400">
+Sim. O código PIX Copia e Cola e o QR Code contêm exatamente as mesmas informações.
+</p> </div> <div class="border border-gray-200 dark:border-gray-700 rounded-2xl p-6"> <h3 class="font-semibold text-lg text-gray-900 dark:text-white mb-3">
+Qual a diferença entre PIX Copia e Cola e QR Code?
+</h3> <p class="text-gray-600 dark:text-gray-400">
+Nenhuma diferença técnica. Apenas a forma de apresentação dos dados.
+</p> </div> <div class="border border-gray-200 dark:border-gray-700 rounded-2xl p-6"> <h3 class="font-semibold text-lg text-gray-900 dark:text-white mb-3">
+O QR Code gerado continua válido?
+</h3> <p class="text-gray-600 dark:text-gray-400">
+Sim. Nenhum dado é alterado durante a conversão. O QR Code mantém todas as informações originais.
+</p> </div> <div class="border border-gray-200 dark:border-gray-700 rounded-2xl p-6"> <h3 class="font-semibold text-lg text-gray-900 dark:text-white mb-3">
+O que é um BR Code?
+</h3> <p class="text-gray-600 dark:text-gray-400">
+BR Code é o padrão técnico criado pelo Banco Central do Brasil para pagamentos via PIX.
+</p> </div> </div> </section> </div> </main>  <!-- Conteúdo das páginas --> <!-- <BuyMeACoffee /> Botão de apoio, pode ser ocultado com CSS se não quiser mostrar --> <footer class="mt-auto bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 py-6 text-center text-sm text-gray-500 dark:text-gray-400">
+© 2026 <a href="https://r3n4t0.cyou" class="hover:text-blue-600">Renato Monteiro Batista</a> • Feito com privacidade em mente • <a href="/privacidade" class="hover:text-blue-600">Política de Privacidade</a> • <a href="https://buymeacoffee.com/dinheirotech" target="_blank" class="hover:text-blue-600">Me pague uma pizza</a> </footer> </body></html> <!-- qrcode.js 1.0 com patch do RenatoMB para corrigir o incompatibilidade com o astro --> <script src="/js/qrcode.min.js"></script> <script>
+  let qrCodeInstance = null;
+
+  function gerarQRCode() {
+    const brcode = document.getElementById("brcode").value.trim();
+
+    if (!brcode) {
+      alert("Por favor, cole o código PIX!");
+      document.getElementById("brcode").focus();
+      return;
+    }
+
+    // Validação básica do formato BR Code
+    if (!brcode.startsWith("000201")) {
+      alert("Código PIX inválido! O código deve começar com '000201'.");
+      document.getElementById("brcode").focus();
+      return;
+    }
+
+    try {
+      const qrContainer = document.getElementById("imagem-qr");
+      qrContainer.innerHTML = "";  // limpa QR anterior
+
+      if (typeof QRCode !== 'undefined') {
+        qrCodeInstance = new QRCode(qrContainer, {
+          text: brcode,
+          width: 300,
+          height: 300,
+          colorDark: "#000000",
+          colorLight: "#ffffff",
+          correctLevel: QRCode.CorrectLevel.H
+        });
+      } else {
+        console.error("QRCode lib não carregou");
+        qrContainer.innerHTML = "<p class='text-red-600'>Erro ao carregar gerador de QR. Tente novamente.</p>";
+        throw new Error("QRCode lib não carregou");
+      }
+
+      document.getElementById("resultado").classList.remove("hidden");
+      document.getElementById("resultado").scrollIntoView({ behavior: "smooth" });
+      
+      // Call pizza function if exists
+      if (typeof pedir_pizza === 'function') {
+        pedir_pizza();
+      }
+    } catch (err) {
+      alert("Erro ao gerar QR Code: " + err.message);
+      console.error(err);
+    }
+  }
+
+  function baixarQRCode() {
+    const qrContainer = document.getElementById("imagem-qr");
+    const canvas = qrContainer.querySelector("canvas");
+    
+    if (!canvas) {
+      alert("Nenhum QR Code gerado ainda!");
+      return;
+    }
+
+    try {
+      // Converte canvas para blob e baixa
+      canvas.toBlob(function(blob) {
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "qrcode-pix-" + Date.now() + ".png";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      });
+    } catch (err) {
+      alert("Erro ao baixar QR Code: " + err.message);
+      console.error(err);
+    }
+  }
+
+
+</script>

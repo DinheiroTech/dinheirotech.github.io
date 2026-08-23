@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="pt-BR" class="scroll-smooth"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Política de Privacidade - Dinheiro.tech | Dinheiro.tech</title><link rel="canonical" href="https://dinheiro.tech/privacidade/"><meta name="description" content="Ferramentas financeiras gratuitas: cashback, PIX, juros compostos e mais."><!-- Adicione mais SEO depois --><script src="/js/pizza.js" defer></script><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-CDBNC5BHFV"></script><script type="module">window.dataLayer=window.dataLayer||[];function a(){dataLayer.push(arguments)}a("js",new Date);a("config","G-CDBNC5BHFV",{anonymize_ip:!0,allow_google_signals:!1,restricted_data_processing:!0});</script><script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script><script type="text/javascript">
+    aclib.runVideoSlider({
+        zoneId: '12028738',
+    });
+</script><link rel="stylesheet" href="/_astro/_slug_.C1ZSu0ly.css"></head> <body class="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col"> <header class="bg-white dark:bg-gray-900 shadow-sm"> <nav class="container mx-auto px-4 py-4 flex justify-between items-center"> <a href="/" class="text-2xl font-bold text-blue-700 dark:text-blue-400">Dinheiro.tech</a> <div class="flex items-center gap-6"> <a href="/" class="hover:text-blue-600">Ferramentas</a> <a href="/artigos" class="hover:text-blue-600">Artigos</a> <!-- Language Switcher --> <div class="relative inline-block" id="lang-switcher"> <button type="button" id="lang-button" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition" aria-label="Selecionar idioma"> <span class="text-xl">🇧🇷</span> <span class="text-sm">▼</span> </button> <div id="lang-menu" class="absolute hidden right-0 mt-2 w-52 bg-white dark:bg-gray-900 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 py-2 z-50"> <a href="/artigos" class="block px-6 py-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition font-semibold text-blue-600"> 🇧🇷 Português </a><a href="/en/artigos" class="block px-6 py-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition "> 🇺🇸 English </a><a href="/it/artigos" class="block px-6 py-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition "> 🇮🇹 Italiano </a><a href="/fr/artigos" class="block px-6 py-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition "> 🇫🇷 Français </a><a href="/de/artigos" class="block px-6 py-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition "> 🇩🇪 Deutsch </a><a href="/es/artigos" class="block px-6 py-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition "> 🇪🇸 Español </a> </div> </div> <script type="module">const o=document.getElementById("lang-button"),d=document.getElementById("lang-menu"),t=document.getElementById("lang-switcher");let n=!1,e=null;function i(){e&&(clearTimeout(e),e=null),d?.classList.remove("hidden"),n=!0}function l(){e=window.setTimeout(()=>{d?.classList.add("hidden"),n=!1,e=null},300)}o?.addEventListener("click",s=>{s.stopPropagation(),n?l():i()});t?.addEventListener("mouseenter",i);t?.addEventListener("mouseleave",l);document.addEventListener("click",s=>{t&&!t.contains(s.target)&&(d?.classList.add("hidden"),n=!1)});</script> <!-- <a href="/cotacoes" class="hover:text-blue-600">Cotações</a>  --> </div> </nav> </header>  <main class="container mx-auto px-4 py-12 max-w-4xl prose dark:prose-invert"> <h1 class="text-4xl font-bold mb-8 text-center">Política de Privacidade</h1> <p class="text-sm text-gray-500 dark:text-gray-400 text-center mb-12">
+Última atualização: Março de 2026
+</p> <p>
+O dinheiro.tech é um site de ferramentas financeiras gratuitas e de uso imediato. Nosso compromisso é com a transparência e a privacidade do usuário. Esta política explica como lidamos (ou não lidamos) com seus dados.
+</p> <h2 class="font-bold">1. Não coletamos dados pessoais</h2> <p>
+Não coletamos, armazenamos nem processamos qualquer tipo de dado pessoal identificável (nome, e-mail, CPF, IP, localização, histórico de navegação, etc.) em nossos servidores.
+</p> <p>
+Todo o processamento (cálculos, decodificação de BR Code, consultas a APIs públicas) ocorre <strong>exclusivamente no seu navegador</strong> (client-side).
+</p> <strong>Exceção (à regra de processamento de dados no navegador): Gerador de QR Code PIX</strong><br>
+Para gerar o código BR Code PIX (payload EMV), os dados que você digita (chave, valor, nome do beneficiário, cidade, descrição, identificador) são enviados temporariamente para um endpoint em nosso servidor, com o único propósito de montar o BR Code e devolvê-lo imediatamente ao seu navegador.
+ <p>
+Esses dados:
+</p> <ul> <li>São processados apenas para montar o BR Code e devolvê-lo imediatamente;</li> <li>Não são armazenados em banco de dados, logs persistentes ou compartilhados com terceiros;</li> <li>São recebidos apenas pelo tempo da requisição (segundos);</li> <li>Incluem seu endereço IP (como qualquer requisição HTTP).</li> </ul> <p>
+Esse endpoint é parte de um MVP/exemplo público e open-source da biblioteca que desenvolvi: <a href="https://github.com/renatomb/php_qrcode_pix" target="_blank" class="text-blue-600 hover:underline">https://github.com/renatomb/php_qrcode_pix</a>.
+</p> <p>
+Não mantemos acesso nem guardamos chaves PIX, nomes, valores ou qualquer informação após a resposta ser enviada.
+</p> <h2>2. Comunicação direta com APIs públicas</h2> <p>
+A maioria das ferramentas (cotações, cálculos) ocorre exclusivamente no seu navegador, sem passar pelos nossos servidores. O seu navegador faz requisições diretas às APIs públicas:
+</p> <ul> <li>Banco Central do Brasil (BACEN)</li> <li>Binance</li> <li>NovaDAX</li> </ul> <p>
+Essas requisições não passam pelos nossos servidores. Não temos acesso ao conteúdo delas.
+</p> <h2>3. Google Analytics (com restrições)</h2> <p>
+Usamos Google Analytics (GA4) de forma limitada para entender o uso do site (número de visitas, páginas mais acessadas, fontes de tráfego). Não coletamos nem armazenamos dados pessoais identificáveis.
+</p> <p>
+Configurações aplicadas:
+</p> <ul> <li>IP anonimizado</li> <li>Restricted Data Processing ativado</li> <li>Sem remarketing ou publicidade personalizada</li> <li>Sem cruzamento de dados com outros produtos Google</li> </ul> <p>
+Você pode bloquear o Analytics a qualquer momento usando extensões como uBlock Origin ou desativando JavaScript para o domínio googlesyndication.com.
+</p> <h2>4. Cookies e tecnologias de rastreamento</h2> <p>
+Não usamos cookies próprios para rastreamento. O Google Analytics pode definir cookies técnicos (anônimos) apenas se você não bloqueá-los.
+</p> <p>
+Não há cookies de terceiros para publicidade ou profiling.
+</p> <h2>5. Links externos e APIs</h2> <p>
+O site contém links para serviços externos (ex: Buy Me a Coffee, APIs públicas). Não controlamos a privacidade desses serviços. Recomendamos ler as políticas deles.
+</p> <h2>6. Alterações nesta política</h2> <p>
+Podemos atualizar esta política para refletir mudanças no site ou na legislação. A versão mais recente estará sempre nesta página, com data de atualização.
+</p> <h2>7. Contato</h2> <p>
+Dúvidas? Envie mensagem direta para <a href="https://x.com/magoescorpiao" class="text-blue-600 hover:underline">@magoescorpiao</a> no X.
+</p> </main>  <!-- Conteúdo das páginas --> <!-- <BuyMeACoffee /> Botão de apoio, pode ser ocultado com CSS se não quiser mostrar --> <footer class="mt-auto bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 py-6 text-center text-sm text-gray-500 dark:text-gray-400">
+© 2026 <a href="https://r3n4t0.cyou" class="hover:text-blue-600">Renato Monteiro Batista</a> • Feito com privacidade em mente • <a href="/privacidade" class="hover:text-blue-600">Política de Privacidade</a> • <a href="https://buymeacoffee.com/dinheirotech" target="_blank" class="hover:text-blue-600">Me pague uma pizza</a> </footer> </body></html>

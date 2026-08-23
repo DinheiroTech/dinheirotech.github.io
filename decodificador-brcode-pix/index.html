@@ -1,0 +1,115 @@
+<!DOCTYPE html><html lang="pt-BR" class="scroll-smooth"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Decodificador de BR Code PIX - Dinheiro.tech | Dinheiro.tech</title><link rel="canonical" href="https://dinheiro.tech/decodificador-brcode-pix/"><meta name="description" content="Ferramentas financeiras gratuitas: cashback, PIX, juros compostos e mais."><!-- Adicione mais SEO depois --><script src="/js/pizza.js" defer></script><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-CDBNC5BHFV"></script><script type="module">window.dataLayer=window.dataLayer||[];function a(){dataLayer.push(arguments)}a("js",new Date);a("config","G-CDBNC5BHFV",{anonymize_ip:!0,allow_google_signals:!1,restricted_data_processing:!0});</script><script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script><script type="text/javascript">
+    aclib.runVideoSlider({
+        zoneId: '12028738',
+    });
+</script><link rel="stylesheet" href="/_astro/_slug_.C1ZSu0ly.css"></head> <body class="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col"> <header class="bg-white dark:bg-gray-900 shadow-sm"> <nav class="container mx-auto px-4 py-4 flex justify-between items-center"> <a href="/" class="text-2xl font-bold text-blue-700 dark:text-blue-400">Dinheiro.tech</a> <div class="flex items-center gap-6"> <a href="/" class="hover:text-blue-600">Ferramentas</a> <a href="/artigos" class="hover:text-blue-600">Artigos</a> <!-- Language Switcher --> <div class="relative inline-block" id="lang-switcher"> <button type="button" id="lang-button" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition" aria-label="Selecionar idioma"> <span class="text-xl">🇧🇷</span> <span class="text-sm">▼</span> </button> <div id="lang-menu" class="absolute hidden right-0 mt-2 w-52 bg-white dark:bg-gray-900 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 py-2 z-50"> <a href="/artigos" class="block px-6 py-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition font-semibold text-blue-600"> 🇧🇷 Português </a><a href="/en/artigos" class="block px-6 py-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition "> 🇺🇸 English </a><a href="/it/artigos" class="block px-6 py-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition "> 🇮🇹 Italiano </a><a href="/fr/artigos" class="block px-6 py-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition "> 🇫🇷 Français </a><a href="/de/artigos" class="block px-6 py-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition "> 🇩🇪 Deutsch </a><a href="/es/artigos" class="block px-6 py-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition "> 🇪🇸 Español </a> </div> </div> <script type="module">const o=document.getElementById("lang-button"),d=document.getElementById("lang-menu"),t=document.getElementById("lang-switcher");let n=!1,e=null;function i(){e&&(clearTimeout(e),e=null),d?.classList.remove("hidden"),n=!0}function l(){e=window.setTimeout(()=>{d?.classList.add("hidden"),n=!1,e=null},300)}o?.addEventListener("click",s=>{s.stopPropagation(),n?l():i()});t?.addEventListener("mouseenter",i);t?.addEventListener("mouseleave",l);document.addEventListener("click",s=>{t&&!t.contains(s.target)&&(d?.classList.add("hidden"),n=!1)});</script> <!-- <a href="/cotacoes" class="hover:text-blue-600">Cotações</a>  --> </div> </nav> </header>  <main class="container mx-auto px-4 py-8 md:py-12 max-w-4xl"> <h1 class="text-3xl md:text-4xl font-bold text-center mb-8 text-blue-700 dark:text-blue-400">
+Decodificador de BR Code PIX (Copia e Cola)
+</h1> <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 md:p-8"> <div class="space-y-6"> <div> <label for="brcodepix" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+Cole o BR Code PIX aqui
+</label> <textarea id="brcodepix" rows="5" class="mt-1 block w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 text-base font-mono resize-y" placeholder="000201... (cole o código copia e cola completo)"></textarea> </div> <button type="button" onclick="decodificarbrcode()" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 px-6 rounded-xl transition text-lg">
+Decodificar BR Code PIX
+</button> </div> <!-- Resultado --> <div id="resultado" class="mt-10 hidden space-y-8"> <div class="grid grid-cols-1 md:grid-cols-2 gap-6"> <div> <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Chave PIX</label> <input type="text" id="chave" readonly class="mt-1 block w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 shadow-sm p-3 text-lg cursor-pointer" onclick="this.select()"> </div> <div> <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Valor</label> <input type="text" id="valor" readonly class="mt-1 block w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 shadow-sm p-3 text-lg cursor-pointer" onclick="this.select()"> </div> <div> <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Beneficiário</label> <input type="text" id="beneficiario" readonly class="mt-1 block w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 shadow-sm p-3 text-lg cursor-pointer" onclick="this.select()"> </div> <div> <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Cidade</label> <input type="text" id="cidade" readonly class="mt-1 block w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 shadow-sm p-3 text-lg cursor-pointer" onclick="this.select()"> </div> <div class="md:col-span-2"> <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Descrição (opcional)</label> <input type="text" id="descricao" readonly class="mt-1 block w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 shadow-sm p-3 text-lg cursor-pointer" onclick="this.select()"> </div> <div class="md:col-span-2"> <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Identificador (TXID)</label> <input type="text" id="identificador" readonly class="mt-1 block w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 shadow-sm p-3 text-lg cursor-pointer" onclick="this.select()"> </div> </div> <div class="donation-wrapper hidden opacity-0 translate-y-4 scale-95 transition-all duration-1500 ease-in mt-8 text-center "> <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="dinheirotech" data-color="#FFDD00" data-emoji="🍕" data-font="Cookie" data-text="Gostou? Me pague uma pizza!" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff"></script> </div> <div> <h3 class="text-2xl font-bold mb-4 text-center">Tabela EMV Completa</h3> <div class="overflow-x-auto"> <table id="tabela-emv" class="min-w-full border-collapse border border-gray-300 dark:border-gray-600 text-sm"> <thead class="bg-gray-100 dark:bg-gray-700"> <tr> <th class="border px-4 py-2 text-left">EMV</th> <th class="border px-4 py-2 text-left">Conteúdo</th> <th class="border px-4 py-2 text-left">Descrição</th> </tr> </thead> <tbody class="bg-white dark:bg-gray-800"></tbody> </table> </div> </div> <div class="text-center space-x-2 space-y-2"> <a href="/decodificador-brcode-pix" class="inline-block"> <button class="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg transition">Decodificar outro BR Code</button> </a> <a href="/qr-code-pix" class="inline-block"> <button class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg transition">Gerar QR Code PIX</button> </a> <a href="/transformar-qr-code-pix-em-pix-copia-e-cola" class="inline-block"> <button class="bg-purple-600 hover:bg-purple-700 text-white py-3 px-6 rounded-lg transition">Converter QR Code PIX em Copia e Cola</button> </a> </div> </div> </div> </main>  <!-- Conteúdo das páginas --> <!-- <BuyMeACoffee /> Botão de apoio, pode ser ocultado com CSS se não quiser mostrar --> <footer class="mt-auto bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 py-6 text-center text-sm text-gray-500 dark:text-gray-400">
+© 2026 <a href="https://r3n4t0.cyou" class="hover:text-blue-600">Renato Monteiro Batista</a> • Feito com privacidade em mente • <a href="/privacidade" class="hover:text-blue-600">Política de Privacidade</a> • <a href="https://buymeacoffee.com/dinheirotech" target="_blank" class="hover:text-blue-600">Me pague uma pizza</a> </footer> </body></html> <script>
+  // Função decode_brcode exatamente como a sua original
+  function decode_brcode(brcode, recursivamente = true) {
+    if (!recursivamente) {
+      console.log('Decode nao recursivo ' + brcode);
+    }
+    let n = 0;
+    let retorno = {};
+    while (n < brcode.length) {
+      let codigo = brcode.substring(n, n + 2);
+      n += 2;
+      let tamanho = parseInt(brcode.substring(n, n + 2));
+      if (isNaN(tamanho)) {
+        return false;
+      }
+      n += 2;
+      let valor = brcode.substring(n, n + tamanho);
+      console.log('Cod:' + codigo + ' T: ' + tamanho + ' Data: ' + valor);
+      n += tamanho;
+      if (codigo == '26') {
+        retorno['26'] = decode_brcode(valor, false);
+      } else if (recursivamente && (/^[0-9]{4}.+$/.test(valor) && (codigo != '54'))) {
+        retorno[codigo] = decode_brcode(valor);
+      } else {
+        retorno[codigo] = valor;
+      }
+    }
+    return retorno;
+  }
+
+  // Função decodificar (adaptada sem jQuery)
+  function decodificarbrcode() {
+    const textarea = document.getElementById("brcodepix");
+    let brcodepix = textarea.value.trim();
+
+    if (!brcodepix) {
+      console.log("BR-Code vazio");
+      return;
+    }
+
+    console.log('BR-Code: ' + brcodepix);
+
+    const retorno = decode_brcode(brcodepix);
+
+    console.log(retorno);
+
+    // Preenche os campos
+    document.getElementById("chave").value = retorno['26']?.['01'] || '';
+    document.getElementById("descricao").value = retorno['26']?.['02'] || '';
+    document.getElementById("valor").value = retorno['54'] || '';
+    document.getElementById("beneficiario").value = retorno['59'] || '';
+    document.getElementById("cidade").value = retorno['60'] || '';
+    document.getElementById("identificador").value = retorno['62']?.['05'] || '';
+
+    // Limpa tabela EMV
+    const tbody = document.querySelector("#tabela-emv tbody");
+    tbody.innerHTML = '';
+
+    // Descrições
+    const descricao = {
+      '00': 'Payload Format Indicator',
+      '01': 'Point of Initiation Method',
+      '26': 'Merchant Account Information',
+      '52': 'Merchant Category Code',
+      '53': 'Transaction Currency',
+      '54': 'Transaction Amount',
+      '58': 'Country Code',
+      '59': 'Merchant Name',
+      '60': 'Merchant City',
+      '61': 'Postal Code',
+      '62': 'Additional Data Field Template',
+      '63': 'CRC'
+    };
+
+    // Preenche tabela
+    Object.entries(retorno).forEach(([key, value]) => {
+      const desc = descricao[key] || '';
+      if (typeof value === 'object') {
+        Object.entries(value).forEach(([subKey, subValue]) => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td class="border px-4 py-2"><span class="bg-blue-600 text-white px-2 py-1 rounded text-xs">${key}</span> <span class="bg-gray-600 text-white px-2 py-1 rounded text-xs">${subKey}</span></td>
+            <td class="border px-4 py-2">${subValue}</td>
+            <td class="border px-4 py-2"><code>${desc}</code></td>
+          `;
+          tbody.appendChild(row);
+        });
+      } else {
+        const escaped = value.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td class="border px-4 py-2"><span class="bg-blue-600 text-white px-2 py-1 rounded text-xs">${key}</span></td>
+          <td class="border px-4 py-2">${escaped}</td>
+          <td class="border px-4 py-2"><code>${desc}</code></td>
+        `;
+        tbody.appendChild(row);
+      }
+    });
+
+    document.getElementById("resultado").classList.remove("hidden");
+    document.getElementById("resultado").scrollIntoView({ behavior: "smooth" });
+    pedir_pizza();
+  }
+</script>

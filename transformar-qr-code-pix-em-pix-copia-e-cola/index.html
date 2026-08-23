@@ -1,0 +1,180 @@
+<!DOCTYPE html><html lang="pt-BR" class="scroll-smooth"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Converter QR Code PIX em Copia e Cola - Dinheiro.tech | Dinheiro.tech</title><link rel="canonical" href="https://dinheiro.tech/transformar-qr-code-pix-em-pix-copia-e-cola/"><meta name="description" content="Ferramentas financeiras gratuitas: cashback, PIX, juros compostos e mais."><!-- Adicione mais SEO depois --><script src="/js/pizza.js" defer></script><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-CDBNC5BHFV"></script><script type="module">window.dataLayer=window.dataLayer||[];function a(){dataLayer.push(arguments)}a("js",new Date);a("config","G-CDBNC5BHFV",{anonymize_ip:!0,allow_google_signals:!1,restricted_data_processing:!0});</script><script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script><script type="text/javascript">
+    aclib.runVideoSlider({
+        zoneId: '12028738',
+    });
+</script><link rel="stylesheet" href="/_astro/_slug_.C1ZSu0ly.css"></head> <body class="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col"> <header class="bg-white dark:bg-gray-900 shadow-sm"> <nav class="container mx-auto px-4 py-4 flex justify-between items-center"> <a href="/" class="text-2xl font-bold text-blue-700 dark:text-blue-400">Dinheiro.tech</a> <div class="flex items-center gap-6"> <a href="/" class="hover:text-blue-600">Ferramentas</a> <a href="/artigos" class="hover:text-blue-600">Artigos</a> <!-- Language Switcher --> <div class="relative inline-block" id="lang-switcher"> <button type="button" id="lang-button" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition" aria-label="Selecionar idioma"> <span class="text-xl">🇧🇷</span> <span class="text-sm">▼</span> </button> <div id="lang-menu" class="absolute hidden right-0 mt-2 w-52 bg-white dark:bg-gray-900 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 py-2 z-50"> <a href="/artigos" class="block px-6 py-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition font-semibold text-blue-600"> 🇧🇷 Português </a><a href="/en/artigos" class="block px-6 py-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition "> 🇺🇸 English </a><a href="/it/artigos" class="block px-6 py-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition "> 🇮🇹 Italiano </a><a href="/fr/artigos" class="block px-6 py-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition "> 🇫🇷 Français </a><a href="/de/artigos" class="block px-6 py-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition "> 🇩🇪 Deutsch </a><a href="/es/artigos" class="block px-6 py-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition "> 🇪🇸 Español </a> </div> </div> <script type="module">const o=document.getElementById("lang-button"),d=document.getElementById("lang-menu"),t=document.getElementById("lang-switcher");let n=!1,e=null;function i(){e&&(clearTimeout(e),e=null),d?.classList.remove("hidden"),n=!0}function l(){e=window.setTimeout(()=>{d?.classList.add("hidden"),n=!1,e=null},300)}o?.addEventListener("click",s=>{s.stopPropagation(),n?l():i()});t?.addEventListener("mouseenter",i);t?.addEventListener("mouseleave",l);document.addEventListener("click",s=>{t&&!t.contains(s.target)&&(d?.classList.add("hidden"),n=!1)});</script> <!-- <a href="/cotacoes" class="hover:text-blue-600">Cotações</a>  --> </div> </nav> </header>  <main class="container mx-auto px-4 py-8 md:py-12 max-w-4xl"> <h1 class="text-3xl md:text-4xl font-bold text-center mb-8 text-blue-700 dark:text-blue-400">
+Converter QR Code PIX em Copia e Cola
+</h1> <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 md:p-8"> <div class="space-y-6"> <div> <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+Escaneie o QR Code PIX
+</label> <div id="qr-reader" class="w-full max-w-md mx-auto rounded-lg overflow-hidden"></div> <p class="mt-2 text-sm text-gray-500 dark:text-gray-400 text-center">
+Posicione o QR Code PIX na frente da câmera para escanear automaticamente
+</p> </div> <div id="status-message" class="text-center text-sm text-gray-600 dark:text-gray-400 hidden"> <span id="status-text"></span> </div> </div> <!-- Resultado --> <div id="resultado" class="mt-10 hidden space-y-6"> <h3 class="text-2xl font-bold mb-4 text-center text-green-600 dark:text-green-400">
+QR Code Decodificado com Sucesso!
+</h3> <div class="donation-wrapper hidden opacity-0 translate-y-4 scale-95 transition-all duration-1500 ease-in mt-8 text-center "> <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="dinheirotech" data-color="#FFDD00" data-emoji="🍕" data-font="Cookie" data-text="Gostou? Me pague uma pizza!" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff"></script> </div> <div> <label for="brcode-result" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+Código PIX Copia e Cola
+</label> <textarea id="brcode-result" rows="5" readonly class="mt-1 block w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 text-base font-mono resize-y cursor-pointer" onclick="this.select()"></textarea> </div> <div class="flex flex-wrap gap-3 justify-center"> <button onclick="copiarCodigo()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">
+Copiar Código
+</button> <a href="/decodificador-brcode-pix"> <button class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg transition">
+Decodificar BR Code
+</button> </a> <button onclick="reiniciarScanner()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition">
+Escanear Outro
+</button> </div> </div> <!-- Informações adicionais --> <div class="mt-8 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg"> <h3 class="font-bold text-lg mb-2 text-blue-800 dark:text-blue-300">Como converter QR Code PIX em Copia e Cola:</h3> <ul class="list-disc list-inside space-y-2 text-sm text-gray-700 dark:text-gray-300"> <li>Permita o acesso à câmera quando solicitado pelo navegador</li> <li>Posicione o QR Code PIX na frente da câmera</li> <li>O código será lido automaticamente e convertido em formato Copia e Cola</li> <li>Use o botão "Copiar Código" para copiar o resultado</li> <li>Cole o código no aplicativo do seu banco ou carteira digital</li> <li>Todo o processo ocorre localmente no seu navegador - 100% seguro</li> <li>Nenhum dado é enviado para servidores externos</li> </ul> </div> <section class="mt-12"> <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">Perguntas Frequentes</h2> <div class="space-y-6"> <div class="border border-gray-200 dark:border-gray-700 rounded-2xl p-6"> <h3 class="font-semibold text-lg text-gray-900 dark:text-white mb-3">
+Como converter QR Code PIX em código Copia e Cola?
+</h3> <p class="text-gray-600 dark:text-gray-400">
+Basta escanear o QR Code com a câmera do seu dispositivo. O código será automaticamente convertido para o formato Copia e Cola (BR Code).
+</p> </div> <div class="border border-gray-200 dark:border-gray-700 rounded-2xl p-6"> <h3 class="font-semibold text-lg text-gray-900 dark:text-white mb-3">
+É seguro escanear QR Codes PIX online?
+</h3> <p class="text-gray-600 dark:text-gray-400">
+Sim. Nossa ferramenta processa tudo localmente no seu navegador. Nenhum dado é enviado para servidores externos.
+</p> </div> <div class="border border-gray-200 dark:border-gray-700 rounded-2xl p-6"> <h3 class="font-semibold text-lg text-gray-900 dark:text-white mb-3">
+Preciso instalar algum aplicativo?
+</h3> <p class="text-gray-600 dark:text-gray-400">
+Não. Tudo funciona diretamente no navegador, sem necessidade de instalação.
+</p> </div> <div class="border border-gray-200 dark:border-gray-700 rounded-2xl p-6"> <h3 class="font-semibold text-lg text-gray-900 dark:text-white mb-3">
+Qual a diferença entre QR Code e Copia e Cola?
+</h3> <p class="text-gray-600 dark:text-gray-400">
+Ambos contêm as mesmas informações de pagamento, apenas em formatos diferentes. O QR Code é visual (imagem) e o Copia e Cola é textual (código).
+</p> </div> <div class="border border-gray-200 dark:border-gray-700 rounded-2xl p-6"> <h3 class="font-semibold text-lg text-gray-900 dark:text-white mb-3">
+O código convertido funciona em qualquer banco?
+</h3> <p class="text-gray-600 dark:text-gray-400">
+Sim. O código BR Code é o padrão oficial do Banco Central e funciona em todos os bancos e carteiras digitais que aceitam PIX.
+</p> </div> </div> </section> </div> </main>  <!-- Conteúdo das páginas --> <!-- <BuyMeACoffee /> Botão de apoio, pode ser ocultado com CSS se não quiser mostrar --> <footer class="mt-auto bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 py-6 text-center text-sm text-gray-500 dark:text-gray-400">
+© 2026 <a href="https://r3n4t0.cyou" class="hover:text-blue-600">Renato Monteiro Batista</a> • Feito com privacidade em mente • <a href="/privacidade" class="hover:text-blue-600">Política de Privacidade</a> • <a href="https://buymeacoffee.com/dinheirotech" target="_blank" class="hover:text-blue-600">Me pague uma pizza</a> </footer> </body></html> <script src="/js/html5-qrcode.min.js"></script> <script>
+  let html5QrCode = null;
+  let scannerAtivo = false;
+
+  function iniciarScanner() {
+    const qrReaderElement = document.getElementById("qr-reader");
+    
+    if (!qrReaderElement) {
+      console.error("Elemento qr-reader não encontrado");
+      return;
+    }
+
+    if (scannerAtivo) {
+      return;
+    }
+
+    try {
+      html5QrCode = new Html5Qrcode("qr-reader");
+      
+      const config = {
+        fps: 10,
+        qrbox: { width: 250, height: 250 },
+        aspectRatio: 1.0
+      };
+
+      html5QrCode.start(
+        { facingMode: "environment" },
+        config,
+        onScanSuccess,
+        onScanError
+      ).then(() => {
+        scannerAtivo = true;
+        mostrarStatus("Câmera ativada. Posicione o QR Code na frente da câmera.", "info");
+      }).catch(err => {
+        console.error("Erro ao iniciar scanner:", err);
+        mostrarStatus("Erro ao acessar câmera. Verifique as permissões.", "error");
+      });
+    } catch (err) {
+      console.error("Erro ao criar scanner:", err);
+      mostrarStatus("Erro ao inicializar scanner.", "error");
+    }
+  }
+
+  function onScanSuccess(decodedText, decodedResult) {
+    console.log("QR Code decodificado:", decodedText);
+    
+    // Validação básica - PIX BR Code deve começar com 000201
+    if (decodedText.startsWith("000201")) {
+      pararScanner();
+      
+      document.getElementById("brcode-result").value = decodedText;
+      document.getElementById("resultado").classList.remove("hidden");
+      document.getElementById("resultado").scrollIntoView({ behavior: "smooth" });
+      
+      mostrarStatus("QR Code lido com sucesso!", "success");
+      
+      if (typeof pedir_pizza === 'function') {
+        pedir_pizza();
+      }
+    } else {
+      mostrarStatus("Este não parece ser um QR Code PIX válido. Tente novamente.", "warning");
+    }
+  }
+
+  function onScanError(errorMessage) {
+    // Erros comuns durante scan são normais - não exibir
+    // console.log("Scan error:", errorMessage);
+  }
+
+  function pararScanner() {
+    if (html5QrCode && scannerAtivo) {
+      html5QrCode.stop().then(() => {
+        scannerAtivo = false;
+        console.log("Scanner parado");
+      }).catch(err => {
+        console.error("Erro ao parar scanner:", err);
+      });
+    }
+  }
+
+  function reiniciarScanner() {
+    document.getElementById("resultado").classList.add("hidden");
+    document.getElementById("brcode-result").value = "";
+    iniciarScanner();
+  }
+
+  function copiarCodigo() {
+    const textarea = document.getElementById("brcode-result");
+    textarea.select();
+    
+    try {
+      navigator.clipboard.writeText(textarea.value).then(() => {
+        mostrarStatus("Código copiado com sucesso!", "success");
+      }).catch(() => {
+        document.execCommand('copy');
+        mostrarStatus("Código copiado com sucesso!", "success");
+      });
+    } catch (err) {
+      mostrarStatus("Erro ao copiar. Selecione e copie manualmente.", "error");
+    }
+  }
+
+  function mostrarStatus(mensagem, tipo) {
+    const statusDiv = document.getElementById("status-message");
+    const statusText = document.getElementById("status-text");
+    
+    statusText.textContent = mensagem;
+    statusDiv.classList.remove("hidden");
+    
+    // Cores baseadas no tipo
+    statusDiv.className = "text-center text-sm mt-4 p-3 rounded-lg";
+    if (tipo === "success") {
+      statusDiv.className += " bg-green-100 dark:bg-green-900/20 text-green-800 dark:text-green-300";
+    } else if (tipo === "error") {
+      statusDiv.className += " bg-red-100 dark:bg-red-900/20 text-red-800 dark:text-red-300";
+    } else if (tipo === "warning") {
+      statusDiv.className += " bg-yellow-100 dark:bg-yellow-900/20 text-yellow-800 dark:text-yellow-300";
+    } else {
+      statusDiv.className += " bg-blue-100 dark:bg-blue-900/20 text-blue-800 dark:text-blue-300";
+    }
+    
+    // Auto-ocultar após 5 segundos (exceto erros)
+    if (tipo !== "error") {
+      setTimeout(() => {
+        statusDiv.classList.add("hidden");
+      }, 5000);
+    }
+  }
+
+  // Iniciar scanner quando a página carregar
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', iniciarScanner);
+  } else {
+    iniciarScanner();
+  }
+
+  // Parar scanner quando sair da página
+  window.addEventListener('beforeunload', pararScanner);
+</script>

@@ -1,0 +1,156 @@
+<!DOCTYPE html><html lang="pt-BR" class="scroll-smooth"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Gerador de QR Code PIX - Dinheiro.tech | Dinheiro.tech</title><link rel="canonical" href="https://dinheiro.tech/qr-code-pix/"><meta name="description" content="Ferramentas financeiras gratuitas: cashback, PIX, juros compostos e mais."><!-- Adicione mais SEO depois --><script src="/js/pizza.js" defer></script><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-CDBNC5BHFV"></script><script type="module">window.dataLayer=window.dataLayer||[];function a(){dataLayer.push(arguments)}a("js",new Date);a("config","G-CDBNC5BHFV",{anonymize_ip:!0,allow_google_signals:!1,restricted_data_processing:!0});</script><script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script><script type="text/javascript">
+    aclib.runVideoSlider({
+        zoneId: '12028738',
+    });
+</script><link rel="stylesheet" href="/_astro/_slug_.C1ZSu0ly.css"></head> <body class="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col"> <header class="bg-white dark:bg-gray-900 shadow-sm"> <nav class="container mx-auto px-4 py-4 flex justify-between items-center"> <a href="/" class="text-2xl font-bold text-blue-700 dark:text-blue-400">Dinheiro.tech</a> <div class="flex items-center gap-6"> <a href="/" class="hover:text-blue-600">Ferramentas</a> <a href="/artigos" class="hover:text-blue-600">Artigos</a> <!-- Language Switcher --> <div class="relative inline-block" id="lang-switcher"> <button type="button" id="lang-button" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition" aria-label="Selecionar idioma"> <span class="text-xl">🇧🇷</span> <span class="text-sm">▼</span> </button> <div id="lang-menu" class="absolute hidden right-0 mt-2 w-52 bg-white dark:bg-gray-900 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 py-2 z-50"> <a href="/artigos" class="block px-6 py-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition font-semibold text-blue-600"> 🇧🇷 Português </a><a href="/en/artigos" class="block px-6 py-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition "> 🇺🇸 English </a><a href="/it/artigos" class="block px-6 py-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition "> 🇮🇹 Italiano </a><a href="/fr/artigos" class="block px-6 py-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition "> 🇫🇷 Français </a><a href="/de/artigos" class="block px-6 py-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition "> 🇩🇪 Deutsch </a><a href="/es/artigos" class="block px-6 py-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition "> 🇪🇸 Español </a> </div> </div> <script type="module">const o=document.getElementById("lang-button"),d=document.getElementById("lang-menu"),t=document.getElementById("lang-switcher");let n=!1,e=null;function i(){e&&(clearTimeout(e),e=null),d?.classList.remove("hidden"),n=!0}function l(){e=window.setTimeout(()=>{d?.classList.add("hidden"),n=!1,e=null},300)}o?.addEventListener("click",s=>{s.stopPropagation(),n?l():i()});t?.addEventListener("mouseenter",i);t?.addEventListener("mouseleave",l);document.addEventListener("click",s=>{t&&!t.contains(s.target)&&(d?.classList.add("hidden"),n=!1)});</script> <!-- <a href="/cotacoes" class="hover:text-blue-600">Cotações</a>  --> </div> </nav> </header>  <main class="container mx-auto px-4 py-8 md:py-12 max-w-4xl"> <h1 class="text-3xl md:text-4xl font-bold text-center mb-8 text-blue-700 dark:text-blue-400">
+Gerador de QR Code PIX (Copia e Cola)
+</h1> <p class="text-xl text-center text-emerald-600 dark:text-emerald-400 font-medium max-w-2xl mx-auto">
+Gerador de QR Code PIX que nasceu junto com o PIX no Brasil.
+</p> <p class="text-center text-gray-600 dark:text-gray-400 mt-2">
+Gratuito • Confiável • Sem cadastro • Com privacidade desde 16 de novembro de 2020.
+</p> <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 md:p-8"> <form id="pix-form" class="space-y-6"> <div> <label for="chave" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+Chave PIX
+</label> <input type="text" id="chave" placeholder="E-mail, telefone, CPF, CNPJ ou chave aleatória" class="mt-1 block w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 text-lg" required onclick="this.select();"> <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
+Pode ser aleatória (EVP), e-mail, telefone, CPF ou CNPJ. Para CPF/CNPJ utilize apenas números sem pontuação.
+</p> </div> <div> <label for="valor" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+Valor (R$) - deixe 0.00 para não especificar o valor e permitir que o pagador escolha o valor.
+</label> <input type="text" id="valor" placeholder="ex: 50.00" class="mt-1 block w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 text-lg" required onclick="this.select();"> <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
+Use ponto como decimal.
+</p> </div> <div> <label for="beneficiario" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+Nome do beneficiário
+</label> <input type="text" id="beneficiario" placeholder="Seu nome ou empresa" maxlength="25" class="mt-1 block w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 text-lg" required onclick="this.select();"> </div> <div> <label for="cidade" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+Cidade do beneficiário
+</label> <input type="text" id="cidade" placeholder="ex: Natal" maxlength="15" class="mt-1 block w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 text-lg" required onclick="this.select();"> </div> <div> <label for="descricao" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+Descrição (opcional)
+</label> <input type="text" id="descricao" placeholder="ex: Pagamento de serviço" maxlength="70" class="mt-1 block w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 text-lg" required onclick="this.select();"> </div> <div> <label for="identificador" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+Identificador (TXID)
+</label> <input type="text" id="identificador" placeholder="*** (automático)" value="***" class="mt-1 block w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 text-lg" required onclick="this.select();"> <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
+Use *** para automático. Alguns bancos exigem autorização para TXID customizado.
+</p> </div> <button type="button" onclick="gerarQRCode()" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-6 rounded-xl transition text-lg flex items-center justify-center gap-2">
+Gerar QR Code PIX <span class="text-xl">💳</span> </button> </form> <!-- Resultado --> <div id="resultado" class="mt-10 hidden"> <h3 class="text-2xl font-bold mb-4 text-center">Código PIX Copia e Cola</h3> <textarea id="brcodepix" rows="5" class="w-full p-4 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 text-mono text-sm resize-y" readonly onclick="copiarTexto()">Aguarde...</textarea> <div class="donation-wrapper hidden opacity-0 translate-y-4 scale-95 transition-all duration-1500 ease-in mt-8 text-center "> <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="dinheirotech" data-color="#FFDD00" data-emoji="🍕" data-font="Cookie" data-text="Gostou? Me pague uma pizza!" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff"></script> </div> <div id="imagem-qr" class="mt-6 flex justify-center"></div> <div class="mt-6 text-center"> <button onclick="copiarTexto()" id="btn-copiar" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg transition"> Copiar Código </button> <a href="/qr-code-pix"><button class="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg transition"> Gerar outro </button></a> <a href="/decodificador-brcode-pix"><button class="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg transition"> Decodificar PIX </button></a> </div> </div> </div> </main>  <!-- Conteúdo das páginas --> <!-- <BuyMeACoffee /> Botão de apoio, pode ser ocultado com CSS se não quiser mostrar --> <footer class="mt-auto bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 py-6 text-center text-sm text-gray-500 dark:text-gray-400">
+© 2026 <a href="https://r3n4t0.cyou" class="hover:text-blue-600">Renato Monteiro Batista</a> • Feito com privacidade em mente • <a href="/privacidade" class="hover:text-blue-600">Política de Privacidade</a> • <a href="https://buymeacoffee.com/dinheirotech" target="_blank" class="hover:text-blue-600">Me pague uma pizza</a> </footer> </body></html> <!-- qrcode.js 1.0 com patch do RenatoMB para corrigir o incompatibilidade com o astro --> <script src="/js/qrcode.min.js"></script> <script>
+  function copiarTexto() {
+    const copyText = document.getElementById("brcodepix");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+    document.getElementById("btn-copiar").textContent = "Copiado!";
+    setTimeout(() => {
+        document.getElementById("btn-copiar").textContent = "Copiar Código";
+        }, 2000);
+  }
+
+  function mascara(o, f) {
+    const v_obj = o;
+    const v_fun = f;
+    setTimeout(() => {
+      v_obj.value = v_fun(v_obj.value);
+    }, 1);
+  }
+
+  function reais(v) {
+    v = v.replace(/\D/g, "");
+    v = (Number(v) / 100).toFixed(2);
+    return v;
+  }
+
+  // Aplica máscara no valor
+// Máscara com ponto como decimal (igual ao seu original)
+// Restaura máscara original: digita números → divide por 100 e mostra com ponto
+document.addEventListener("DOMContentLoaded", () => {
+  const valorEl = document.getElementById("valor");
+  if (valorEl) {
+    valorEl.addEventListener("input", () => {
+      let v = valorEl.value.replace(/\D/g, ""); // só dígitos
+      if (v === "") v = "0";
+      const valorNumerico = Number(v) / 100;
+      valorEl.value = valorNumerico.toFixed(2); // exibe com ponto: 0.05, 0.50, 50.00 etc.
+      // Recalcula automaticamente ao digitar (opcional, mas útil)
+      //gerarQRCode(); // ou calcular() se for cashback
+    });
+  }
+
+  // Valor inicial se vazio
+  if (valorEl.value === "") valorEl.value = "0.00";
+});
+
+async function gerarQRCode() {
+  const chave = document.getElementById("chave").value.trim();
+  const valorEl = document.getElementById("valor");
+  const valor = valorEl.value.trim() || "0.00";
+  const beneficiario = document.getElementById("beneficiario").value.trim();
+  const cidade = document.getElementById("cidade").value.trim();
+  const descricao = document.getElementById("descricao").value.trim();
+  const identificador = document.getElementById("identificador").value.trim() || "***";
+
+  if (!chave) {
+    document.getElementById("chave").focus();
+    return;
+  }
+  if (valor === "" || isNaN(Number(valor))) {
+    document.getElementById("valor").focus();
+    return;
+  }
+  if (!beneficiario) {
+    document.getElementById("beneficiario").focus();
+    return;
+  }
+  if (!cidade) {
+    document.getElementById("cidade").focus();
+    return;
+  }
+
+  // Cria o objeto de parâmetros (aqui está o que faltava!)
+  const params = new URLSearchParams();
+  params.append("chave", chave);
+  params.append("valor", valor);  // já vem com ponto do input (ex: "50.00")
+  params.append("beneficiario", beneficiario);
+  params.append("cidade", cidade);
+  params.append("descricao", descricao);
+  params.append("identificador", identificador);
+
+  try {
+    const url = `https://app.dinheiro.tech/brcode-json.php?${params.toString()}`;
+    const response = await fetch(url, {
+      method: "GET"
+    });
+
+    if (!response.ok) {
+      throw new Error(`Erro HTTP: ${response.status}`);
+    }
+
+    const json = await response.json();
+
+    if (!json.brcode) {
+      throw new Error("Resposta inválida: sem brcode");
+    }
+
+    document.getElementById("brcodepix").value = json.brcode;
+
+    const qrContainer = document.getElementById("imagem-qr");
+    qrContainer.innerHTML = "";  // limpa QR anterior
+
+    if (typeof QRCode !== 'undefined') {
+        new QRCode(qrContainer, {
+        text: json.brcode,
+        width: 300,
+        height: 300,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+        });
+    }
+    else {
+        console.error("QRCode lib não carregou");
+        qrContainer.innerHTML = "<p>Erro ao carregar gerador de QR. Tente novamente.</p>";
+        throw new Error("QRCode lib não carregou");
+    }
+
+    document.getElementById("resultado").classList.remove("hidden");
+    document.getElementById("resultado").scrollIntoView({ behavior: "smooth" });
+    pedir_pizza();
+  } catch (err) {
+    alert("Erro ao gerar QR Code: " + err.message);
+    console.error(err);
+  }
+}</script>
